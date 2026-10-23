@@ -1,18 +1,21 @@
-# Aria Hormoz Mehr — Saffron Trade Website
+# Aria Hormuz Mehr — Saffron Export Website
 
-Static bilingual Persian/English website for product and export enquiries. Built with HTML, CSS and JavaScript; no build step is required.
+Responsive bilingual Persian/English static website built with HTML, CSS and JavaScript.
 
-## Publish with GitHub Pages
-1. Upload all files and folders in this directory to the repository root.
-2. Open **Settings → Pages**.
-3. Choose **Deploy from a branch**, branch `main`, folder `/ (root)`, then save.
+## Preview locally
+Open `index.html` in a browser. For best results, use VS Code Live Server or run:
+`python -m http.server 8000`
+Then visit `http://localhost:8000`.
 
-## Preview
-Open `index.html` in a modern browser. Test both language modes and check the WhatsApp/call links on mobile.
+## Publish on GitHub Pages
+1. Create a new GitHub repository.
+2. Upload the contents of this folder (not the ZIP itself).
+3. In repository Settings → Pages, select deployment from the `main` branch and `/ (root)`.
+4. Save and wait for GitHub Pages to publish the preview URL.
 
-## Important
-- Persian copy is written for B2B enquiries, wholesale, distribution and export discussions.
-- Product names and packaging examples are illustrative; confirm current availability, specifications and commercial terms before publishing claims.
-- ISO 3632 content describes assessment parameters; it is not a claim that every batch is certified. Batch-specific reports should be provided only when available.
-- Font stylesheets load from external CDNs and require an internet connection.
-- This is a static site. Enquiries are routed through direct contact links; there is no order database or payment system.
+## Notes
+- Product images are placeholders based on the reference packaging provided.
+- The generated hero image is included locally in `assets/`.
+- The logo reference is used on a white background.
+- ISO wording is intentionally cautious and does not claim that the company holds a certification.
+- Update product photos, verified company details, export markets, certificates and contact preferences before production launch.
