@@ -2,8 +2,6 @@
   const root = document.documentElement;
   const body = document.body;
   const switcher = document.getElementById('languageSwitch');
-  const header = document.querySelector('.site-header');
-  const menu = document.querySelector('.menu-toggle');
   let lang = 'fa';
 
   function setLanguage(next) {
@@ -18,21 +16,12 @@
     document.querySelectorAll('[data-fa][data-en]').forEach(el => {
       el.innerHTML = isEnglish ? el.dataset.en : el.dataset.fa;
     });
-    switcher.innerHTML = isEnglish ? 'فا <span>↗</span>' : 'EN <span>↗</span>';
-    switcher.setAttribute('aria-label', isEnglish ? 'تغییر زبان به فارسی' : 'Switch language to English');
-    menu.setAttribute('aria-label', isEnglish ? 'Open menu' : 'باز کردن منو');
+    if (switcher) {
+      switcher.innerHTML = isEnglish ? 'فا <span class="arrow-mark" aria-hidden="true"></span>' : 'EN <span class="arrow-mark" aria-hidden="true"></span>';
+      switcher.setAttribute('aria-label', isEnglish ? 'تغییر زبان به فارسی' : 'Switch language to English');
+    }
   }
-  switcher.addEventListener('click', () => setLanguage(lang === 'fa' ? 'en' : 'fa'));
-  menu.addEventListener('click', () => {
-    const opened = header.classList.toggle('menu-open');
-    menu.setAttribute('aria-expanded', String(opened));
-    menu.textContent = opened ? '×' : '☰';
-  });
-  document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => {
-    header.classList.remove('menu-open');
-    menu.setAttribute('aria-expanded', 'false');
-    menu.textContent = '☰';
-  }));
+  if (switcher) switcher.addEventListener('click', () => setLanguage(lang === 'fa' ? 'en' : 'fa'));
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver(entries => {

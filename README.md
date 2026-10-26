@@ -19,7 +19,6 @@ This is a static website; no server or build step is required. It can also be de
 
 ## Included original assets
 - `assets/hero.webp` — supplied hero artwork
-- `assets/logo.webp` — supplied brand logo
 - `assets/product-01.webp` through `assets/product-06.webp` — supplied product photographs
 - `assets/story-*.webp` and `assets/heritage-frame.webp` — supplied site illustrations/artwork
 
